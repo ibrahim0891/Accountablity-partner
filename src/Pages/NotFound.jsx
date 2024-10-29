@@ -3,7 +3,7 @@
 
 const NotFound = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-50 px-4">
+        <div className="flex flex-col items-center justify-center h-full rounded-3xl bg-gray-50 px-4">
             <div className="text-center space-y-6">
                  
                 <h1 className="text-8xl font-thin text-gray-900">404</h1>

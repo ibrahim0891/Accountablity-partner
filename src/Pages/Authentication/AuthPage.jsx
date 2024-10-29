@@ -9,6 +9,12 @@ import Card from "../../Components/Card"
 
 
 const AuthPage = () => {
+    if (localStorage.getItem('token')) {
+        window.location.href = '/'
+        return null
+    }
+    console.log('text');
+
     const [isLogin, setIsLogIn] = useState(true)
     const [actionMessage, setActionMessage] = useState(false)
 
