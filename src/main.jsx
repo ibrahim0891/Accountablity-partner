@@ -5,6 +5,7 @@ import App from './App.jsx'
 import LoadingSplashPage from './Pages/LoadingSplashPage.jsx'
 import DataContext from './Context/DataContext.jsx'
 import axios from 'axios'
+import { env } from './environmentVars.js'
 
 // const users = [
 //     {
@@ -93,7 +94,7 @@ const Root = () => {
 
         const localToken = localStorage.getItem('token')
         const localUid = localStorage.getItem('uid')
-        axios.get('http://localhost:3000/aps/user', {
+        axios.get(env.BASE_URL + "/aps/user", {
             headers: {
                 "Content-Type": "application/json",
                 "token": localToken,

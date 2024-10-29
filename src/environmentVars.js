@@ -1,5 +1,5 @@
 
 
 export const env = {
-    BASE_URL: 'http://localhost:3000',
+    BASE_URL: 'https://accountablity-partner-server.onrender.com',
 }
