@@ -7,7 +7,7 @@ const Navbar = () => {
         { to: '/compensation', displayText: "Pay fine" }
     ]
     return (
-        <nav className="w-full bg-my-green-50 flex items-center gap-4 p-4 py-2">
+        <nav className="w-full md:bg-my-green-50 flex items-center gap-4 p-4 py-2">
             {navLinks.map(({ to, displayText }) => (
                 <NavLink
                     key={to}
