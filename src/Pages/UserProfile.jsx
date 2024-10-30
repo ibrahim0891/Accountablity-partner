@@ -91,7 +91,7 @@ const UserProfile = () => {
                     </div>
                 </div>
             </Card>
-            <div className={"h-full flex items-end justify-end fixed top-0 left-0 w-full z-50  backdrop-blur-sm backdrop-filter backdrop-brightness-50 p-4 rounded-3xl " + (confirmationDialog ? 'flex' : 'hidden')}>
+            <div className={"h-full flex items-end justify-end fixed md:absolute top-0 left-0 w-full z-50  backdrop-blur-sm backdrop-filter backdrop-brightness-50 p-4 rounded-3xl " + (confirmationDialog ? 'flex' : 'hidden')}>
 
                 <Card className={'bg-red-50 text-red-800 space-y-3   '}>
                     <h1 className="text-xl font-semibold tracking-tight   mb-3 text-center text-red-900">Delete Account</h1>
