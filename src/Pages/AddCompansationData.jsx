@@ -53,16 +53,17 @@ const AddCompansationData = () => {
         <Page>
             <Card>
                 <h1 className="text-xl font-semibold tracking-tight text-gray-900 mb-6">Add Compensation Data</h1>
-                <div className="space-y-2">
+                <div className="space-y-2 pb-3">
                     <h1 className="text-md tracking-tight text-my-green-900">Instruction:</h1>
                     <div className="text-sm text-gray-600 pl-4">
                         1. ফাইন না থাকলে এখানে কিছু করার প্রয়োজন নেই । 
                         <br />
-                        2. ফাইন থাকলে সেটি এখানে লিখে সাবমিট করুন হবে ।
+                        2. ফাইন থাকলে সেটি এখানে লিখে সাবমিট করুন ।
                     </div>
                 </div>
-                <form className="space-y-6 "   >
-                    <div className="relative">
+
+                <form className="space-y-6"   >
+                    <div className="relative ">
                         <input
                             id="compensation"
                             type="number"
@@ -74,9 +75,9 @@ const AddCompansationData = () => {
                         />
                         <label
                             htmlFor="compensation"
-                            className="absolute left-0 -top-3.5 text-sm text-my-green-600 transition-all 
+                            className="absolute left-0 -top-3 text-sm text-my-green-600 transition-all 
                                      peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
-                                     peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-sm 
+                                     peer-placeholder-shown:top-4 peer-focus:-top-1 peer-focus:text-sm 
                                      peer-focus:text-my-green-700-500"
                         >
                             Compensation Amount

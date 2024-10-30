@@ -7,8 +7,7 @@ import AuthPage from "./Pages/Authentication/AuthPage"
 import userContext from "./Context/UserContext"
 import { useContext } from "react"
 import DataContext from "./Context/DataContext"
-
-import iphone from '../src/assets/iPhone.png'
+ 
 import { BatteryHigh, Bluetooth, CellSignalFull, CellSignalMedium, WifiHigh } from "phosphor-react"
 import UserProfile from "./Pages/UserProfile"
 
