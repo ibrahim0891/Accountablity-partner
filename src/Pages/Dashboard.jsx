@@ -63,7 +63,36 @@ const Dashboard = () => {
                     </div>                
                 ))}
             </Card>
-
+            <Card>
+                <h2 className="text-xl font-semibold tracking-tight text-gray-900 mb-4">Transaction History</h2>
+                <div className="grid grid-cols-2 gap-4">
+                    {user.transactions.map((transaction) => (
+                        <div
+                            key={transaction.transactionId}
+                            className="p-4 rounded-lg bg-white border border-my-green-200 transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px] cursor-pointer elevation-1"
+                            style={{
+                                boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+                            }}
+                        >
+                            <p className="text-gray-700 text-xs">{transaction.date.split('T')[0]}</p>
+                            <p className="text-lg font-semibold text-gray-900">${transaction.amount.toFixed(2)}</p>
+                        </div>
+                    ))}
+                </div>
+            </Card>
+            <Card>
+                <h2 className="text-xl font-semibold tracking-tight text-gray-900 mb-4">User Details</h2>
+                <div className="grid grid-cols-1 gap-4">
+                    <div className="p-4 rounded-lg bg-white border border-my-green-200 transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px] cursor-pointer elevation-1">
+                        <p className="text-gray-700 text-xs">Name</p>
+                        <p className="text-lg font-semibold text-gray-900">{user.name}</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-white border border-my-green-200 transition-transform duration-300 hover:shadow-md hover:translate-y-[-2px] cursor-pointer elevation-1">
+                        <p className="text-gray-700 text-xs">Email</p>
+                        <p className="text-lg font-semibold text " > {user.email} </p>
+                    </div>
+                </div>
+            </Card>
 
         </Page>
     )

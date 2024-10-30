@@ -50,7 +50,7 @@ function App() {
                 </div>
 
                 {/* Android Application view (Demo , btw this is not a real app) */}
-                <div className="overflow-auto flex-grow no-scrollbar">
+                <div className="overflow-auto flex-1 no-scrollbar">
                     <BrowserRouter>
                         <Routes>
                             <Route path="/auth" element={<AuthPage></AuthPage>}>
