@@ -20,7 +20,7 @@ function App() {
     return (
         <>
             {/* android Device Frame  */}
-            <div className="relative md:w-[345px]  md:aspect-[9/18] mx-auto rounded-[32px] shadow-2xl shadow-gray-400/50 hover:shadow-gray-400/70 transition-shadow md:mt-12 md:border-8 md:border-gray-900 flex flex-col">
+            <div className="relative md:w-96 md:aspect-[1/2] mx-auto rounded-[32px] shadow-2xl shadow-gray-400/50 hover:shadow-gray-400/70 transition-shadow md:mt-12 md:border-8 md:border-gray-900 flex flex-col ring-8 ring-my-green-500/10 hover:ring-my-green-500  ring-offset-8 hover:ring-offset-0">
                 <div className=" hidden md:block">
 
                     {/* Punch HOLE camera */}
