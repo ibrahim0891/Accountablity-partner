@@ -69,7 +69,7 @@ const AuthPage = () => {
 
 
     return (
-        <div className="w-full h-full flex items-center justify-center   bg-my-green-900 p-6">
+        <div className="w-full h-screen md:h-full flex items-center justify-center  bg-my-green-900 p-6">
             <Card className="  flex flex-col items-center justify-center gap-6 ">
 
                 <form className="  flex flex-col items-center justify-center gap-6 text-green-800  " onSubmit={handleSubmit}>

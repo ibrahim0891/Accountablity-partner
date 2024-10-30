@@ -16,7 +16,7 @@ const AddCompansationData = () => {
     const [compensation, setCompensation] = useState(0)
     const [date, setDate] = useState(new Date().toISOString().split('T')[0])
 
-    const [confirmationDialog, setConfirmationDialog] = useState(false)
+  
 
     const { users } = useContext(DataContext)
 
@@ -24,34 +24,13 @@ const AddCompansationData = () => {
 
     const user = users.find(user => user._id === localStorage.getItem('uid'))
 
-    function logout() {
-        localStorage.removeItem('token')
-        window.location.href = '/auth'
-        axios.post(env.BASE_URL + "/aps/user/login", {
+    
 
-        }).then((res) => {
-            console.log(res.data);
-        })
-    }
 
-    function deleteAccount() {
-        const accountID = localStorage.getItem('uid')
-        axios.delete(env.BASE_URL + "/aps/user/deleteAccount", {
-            headers: {
-                "Content-Type": "application/json",
-                "token": localStorage.getItem('token'),
-                "uid": localStorage.getItem('uid'),
-                "email": user.email,
-            }
-        }).then((res) => res.data).then((res) => {
-            localStorage.removeItem('token')
-            window.location.href = '/auth'
-        })
-    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(compensation <= 0) {
-            setResponseMessage('শূন্য দিয়ে অথবা ফাঁকা ইনপুট গ্রহণযোগ্য নয়! আবার চেষ্টা করুন।')
+        if(compensation == '') {
+            setResponseMessage('ফাঁকা ইনপুট গ্রহণযোগ্য নয়! আবার চেষ্টা করুন।')
             return
         }
         axios.post(env.BASE_URL + "/aps/user/addTransaction", {
@@ -74,6 +53,14 @@ const AddCompansationData = () => {
         <Page>
             <Card>
                 <h1 className="text-xl font-semibold tracking-tight text-gray-900 mb-6">Add Compensation Data</h1>
+                <div className="space-y-2">
+                    <h1 className="text-md tracking-tight text-my-green-900">Instruction:</h1>
+                    <div className="text-sm text-gray-600 pl-4">
+                        1. ফাইন না থাকলে এখানে কিছু করার প্রয়োজন নেই । 
+                        <br />
+                        2. ফাইন থাকলে সেটি এখানে লিখে সাবমিট করুন হবে ।
+                    </div>
+                </div>
                 <form className="space-y-6 "   >
                     <div className="relative">
                         <input
@@ -118,27 +105,10 @@ const AddCompansationData = () => {
                             </button>
                         </div>
                     </div>
-
-                    <div className="flex float-start gap-2">
-                        <button className=" hover:underline" onClick={logout}> Log out </button>
-                        <button className=" hover:underline" onClick={(e) => { e.preventDefault(); setConfirmationDialog(true) }}> Delete Account </button>
-                    </div>
+ 
                 </form>
             </Card>
-            <div className={"h-full flex items-end justify-end absolute top-0 left-0 w-full z-50  backdrop-blur-sm backdrop-filter backdrop-brightness-50 p-4 rounded-3xl " + (confirmationDialog ? 'flex' : 'hidden') }>
-
-                <Card className={'bg-red-50 text-red-800 space-y-3   ' }>
-                    <h1 className="text-xl font-semibold tracking-tight   mb-3 text-center text-red-900">Delete Account</h1>
-                    <p className="text-xl"> Are you sure to delete your account?
-                        <br />
-                        <span className="font-bold text-sm"> This action cannot be undone. </span>
-                    </p>
-                    <div className="flex gap-5 item-end justify-end">
-                        <button className="block rounded-md   text-red-500 hover:bg-red-100 px-3 py-2 " onClick={deleteAccount}> Delete </button>
-                        <button className="block rounded-md  bg-red-100 hover:bg-transparent text-red-800 hover:bg-red-100 px-3 py-2  " onClick={() => setConfirmationDialog(false)}> Cancel </button>
-                    </div>
-                </Card>
-            </div>
+            
         </Page>
     )
 }

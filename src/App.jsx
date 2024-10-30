@@ -10,6 +10,7 @@ import DataContext from "./Context/DataContext"
 
 import iphone from '../src/assets/iPhone.png'
 import { BatteryHigh, Bluetooth, CellSignalFull, CellSignalMedium, WifiHigh } from "phosphor-react"
+import UserProfile from "./Pages/UserProfile"
 
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
 
 
     return (
-            <>
+        <>
             {/* android Device Frame  */}
-                <div className="relative md:w-[345px]  md:aspect-[9/18] mx-auto rounded-[32px] shadow-2xl shadow-gray-400/50 hover:shadow-gray-400/70 transition-shadow md:mt-12 md:border-8 md:border-gray-900 flex flex-col">
+            <div className="relative md:w-[345px]  md:aspect-[9/18] mx-auto rounded-[32px] shadow-2xl shadow-gray-400/50 hover:shadow-gray-400/70 transition-shadow md:mt-12 md:border-8 md:border-gray-900 flex flex-col">
                 <div className=" hidden md:block">
 
                     {/* Punch HOLE camera */}
@@ -50,7 +51,7 @@ function App() {
                 </div>
 
                 {/* Android Application view (Demo , btw this is not a real app) */}
-                <div className="overflow-auto flex-1 no-scrollbar">
+                <div className="md:overflow-auto flex-1 no-scrollbar">
                     <BrowserRouter>
                         <Routes>
                             <Route path="/auth" element={<AuthPage></AuthPage>}>
@@ -58,6 +59,7 @@ function App() {
                             <Route path="/" element={localStorage.getItem('token') ? <Home /> : <Navigate to="/auth" />}>
                                 <Route index element={<Dashboard />} />
                                 <Route path="/compensation" element={<AddCompansationData />} />
+                                <Route path="/user" element={<UserProfile />} />
                             </Route>
                             <Route path="*" element={<NotFound />} />
                         </Routes>
