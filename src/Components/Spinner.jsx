@@ -1,6 +1,6 @@
 
 
-import funnyLoader from '../../public/funnyLoader.gif'
+import funnyLoader from '../assets/funnyLoader.gif'
 
 const Spinner = ({ size }) => {
     return <div>
