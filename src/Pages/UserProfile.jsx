@@ -16,7 +16,7 @@ const UserProfile = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [confirmationDialog, setConfirmationDialog] = useState(false)
 
-    const user = users.find(user => user._id === USER_ID) 
+    const user = users.find(user => user._id === USER_ID)
 
     function logout() {
         localStorage.removeItem('token')
@@ -42,13 +42,13 @@ const UserProfile = () => {
             window.location.href = '/auth'
         })
     }
-    
+
 
     return (
         <Page>
             <Card className="w-full mx-auto p-6 space-y-6">
-                <div className="flex justify-between items-center -mb-2">
-                    <h1 className="text-3xl font-medium  flex-1">Your Profile </h1>
+                <div className="flex justify-between items-center -mb-2 ">
+                    <h1 className="text-3xl font-medium  flex-1 text-my-green-800 ">Your Profile </h1>
                     <button className=" font-bold p-2 hover:bg-my-green-200   rounded-2xl relative" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                         <DotsThreeVertical weight='fill' size={32} />
                         {isDropdownOpen && (
@@ -56,21 +56,21 @@ const UserProfile = () => {
                                 <div className="fixed inset-0" onClick={() => setIsDropdownOpen(false)}></div>
                                 <div className="absolute top-10 right-0 bg-white text-green-900 shadow-lg rounded-lg p-2 w-44 z-10 text-sm">
                                     <button className=" w-full text-left px-4 py-2 hover:bg-my-green-100 flex items-center gap-3 opacity-50 cursor-not-allowed" disabled><PencilSimple size={20} /> Edit Profile </button>
-                                    <button className=" w-full text-left px-4 py-2 text-yellow-700 hover:bg-amber-50 flex items-center gap-3" onClick={logout} >  <SignOut size={20} /> Logout</button>
+                                    <button className=" w-full text-left px-4 py-2 text-yellow-600 hover:bg-amber-50 flex items-center gap-3" onClick={logout} >  <SignOut size={20} /> Logout</button>
                                     <button className=" w-full text-left px-4 py-2 text-red-800 text-nowrap hover:bg-rose-50 flex items-center gap-3" onClick={(e) => { e.preventDefault(); setConfirmationDialog(true) }}><Trash size={20} /> Delete Profile</button>                                </div>
                             </>
                         )}
                     </button>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6 text-my-green-800">
                     <h2 className="text-xl font-semibold mb-2">Personal Information</h2>
-                    <p className="text-gray-700"><span className="font-medium">Name:</span> {user.name}</p>
-                    <p className="text-gray-700"><span className="font-medium">Email:</span> {user.email}</p> 
+                    <p className=""><span className="font-medium">Name:</span> {user.name}</p>
+                    <p className=""><span className="font-medium">Email:</span> {user.email}</p>
                 </div>
 
                 <div>
-                    <h2 className="text-xl font-semibold mb-4">Transaction History</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-my-green-800">Transaction History</h2>
                     <div className="overflow-x-auto">
                         <table className="w-full border-collapse">
                             <thead>

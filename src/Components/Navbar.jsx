@@ -16,7 +16,7 @@ const Navbar = () => {
                         `px-6 py-3  w-1/2 text-center text-base font-medium transition-all duration-200  hover:bg-my-green-100 rounded-full
                         ${isActive ? 
                             'bg-my-green-400  text-white hover:bg-my-green-400 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.1)] translate-y-[-1px]' : 
-                            'text-gray-600 hover:text-gray-800'}`
+                            'text-my-green-600 hover:text-my-green-800'}`
                     }                >
                     {displayText}
                 </NavLink>

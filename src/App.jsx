@@ -37,7 +37,7 @@ function App() {
                     <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-14 h-1 bg-slate-100 shadow-sm rounded-full"></div>
 
                     {/* Android System Status bar */}
-                    <div className="flex items-center justify-between px-6 pb-2 pt-3 text-slate-800 bg-my-green-50 rounded-t-[24px]">
+                    <div className="flex items-center justify-between px-6 pb-2 pt-3 text-my-green-800 bg-my-green-50 rounded-t-[24px]">
                         <p className="font-semibold ">{new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })}</p>
                         <div className="flex items-center  gap-1 ">
                             <Bluetooth weight="duotone"> </Bluetooth>
