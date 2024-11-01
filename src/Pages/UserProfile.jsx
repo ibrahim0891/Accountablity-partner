@@ -5,6 +5,7 @@ import Card from "../Components/Card";
 import { DotsNine, DotsThreeVertical, PencilSimple, SignOut, Trash } from "phosphor-react";
 import axios from "axios";
 import { env } from "../environmentVars";
+import { Fade, Slide } from "react-awesome-reveal";
 
 
 
@@ -19,6 +20,7 @@ const UserProfile = () => {
     const user = users.find(user => user._id === USER_ID)
 
     function logout() {
+        localStorage.removeItem('firstTime')
         localStorage.removeItem('token')
         window.location.href = '/auth'
         axios.post(env.BASE_URL + "/aps/user/logout", {
@@ -45,7 +47,7 @@ const UserProfile = () => {
 
 
     return (
-        <Page>
+        <Page> 
             <Card className="w-full mx-auto p-6 space-y-6">
                 <div className="flex justify-between items-center -mb-2 ">
                     <h1 className="text-3xl font-medium  flex-1 text-my-green-800 ">Your Profile </h1>
@@ -90,7 +92,7 @@ const UserProfile = () => {
                         </table>
                     </div>
                 </div>
-            </Card>
+            </Card> 
             <div className={"h-full flex items-end justify-end fixed md:absolute top-0 left-0 w-full z-50  backdrop-blur-sm backdrop-filter backdrop-brightness-50 p-4 rounded-3xl " + (confirmationDialog ? 'flex' : 'hidden')}>
 
                 <Card className={'bg-red-50 text-red-800 space-y-3   '}>
