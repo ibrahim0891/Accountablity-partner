@@ -1,7 +1,6 @@
 import Spinner from "../Components/Spinner"
 
 
-
 const LoadingSplashPage = () => {
     return (
         <div className="flex items-center justify-center h-screen flex-col space-y-6">

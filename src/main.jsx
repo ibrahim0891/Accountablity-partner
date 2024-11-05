@@ -87,6 +87,7 @@ const users = [
 
 
 const Root = () => {
+    
     const [isDataFetched, setIsDataFetched] = useState(false)
     const [users, setUsers] = useState(false)
     useEffect(() => {
@@ -94,21 +95,27 @@ const Root = () => {
 
         const localToken = localStorage.getItem('token')
         const localUid = localStorage.getItem('uid')
+
         axios.get(env.BASE_URL + "/aps/user", {
             headers: {
                 "Content-Type": "application/json",
                 "token": localToken,
                 "uid": localStorage.getItem('uid')
             }
-        }).then(res => {
-            console.log(res.data);
+        }).then(res => { 
             setUsers(res.data)
             setIsDataFetched(true)
+
+             
         }).catch(err => {
-            console.log(err);
+            if (err.response.status === 404) { 
+                localStorage.removeItem('token')
+                localStorage.removeItem('uid')
+                setIsDataFetched(true) 
+            }
+            console.log(err.response.status);
         })
 
-         
     }, [])
 
 
