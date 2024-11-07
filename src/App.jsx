@@ -104,6 +104,9 @@ function App() {
                             <X size={20} className="text-my-green-400 hover:text-my-green-700"
                                onClick={() => setWhatsNewVisible(false)}></X>
                         </div>
+                        <div>
+
+                        </div>
                         <p>
                             <Fade cascade damping={0.1} delay={0.1}>
                                 <span className="text-lg">  I&#39;ve made some exciting updates! 🚀 </span>
